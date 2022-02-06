@@ -3,8 +3,12 @@
 > quote
 
 ---tokens---
-'> '          Keyword
-'a\n'         Generic.Emph
+'>'           Keyword
+' '           Text.Whitespace
+'a'           Generic.Emph
+'\n'          Text.Whitespace
 
-'> '          Keyword
-'quote\n'     Generic.Emph
+'>'           Keyword
+' '           Text.Whitespace
+'quote'       Generic.Emph
+'\n'          Text.Whitespace

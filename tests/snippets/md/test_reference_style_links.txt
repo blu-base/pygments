@@ -13,6 +13,7 @@
 
 '['           Text
 'id'          Name.Label
-']: '         Text
+']:'          Text
+' '           Text.Whitespace
 'http://example.com' Name.Attribute
 '\n'          Text

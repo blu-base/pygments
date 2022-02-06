@@ -6,14 +6,15 @@ code
 * `code`
 
 ---tokens---
-'```\ncode\n```\n' Literal.String.Backtick
+'```\ncode\n```' Literal.String.Backtick
+'\n'          Text.Whitespace
 
 '*'           Keyword
-' '           Text
+' '           Text.Whitespace
 'nocode'      Text
 '\n'          Text
 
 '*'           Keyword
-' '           Text
+' '           Text.Whitespace
 '`code`'      Literal.String.Backtick
 '\n'          Text

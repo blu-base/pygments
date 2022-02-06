@@ -543,26 +543,30 @@ class MarkdownLexer(RegexLexer):
     tokens = {
         'root': [
             # heading with '#' prefix (atx-style)
-            (r'(^#[^#].+)(\n)', bygroups(Generic.Heading, Text)),
+            (r'(^#[^#].+)(\n)', bygroups(Generic.Heading, Whitespace)),
             # subheading with '#' prefix (atx-style)
-            (r'(^#{2,6}[^#].+)(\n)', bygroups(Generic.Subheading, Text)),
+            (r'(^#{2,6}[^#].+)(\n)', bygroups(Generic.Subheading, Whitespace)),
             # heading with '=' underlines (Setext-style)
-            (r'^(.+)(\n)(=+)(\n)', bygroups(Generic.Heading, Text, Generic.Heading, Text)),
+            (r'^(.+)(\n)(=+)(\n)', bygroups(Generic.Heading, Whitespace,
+                    Generic.Heading, Whitespace)),
             # subheading with '-' underlines (Setext-style)
-            (r'^(.+)(\n)(-+)(\n)', bygroups(Generic.Subheading, Text, Generic.Subheading, Text)),
+            (r'^(.+)(\n)(-+)(\n)', bygroups(Generic.Subheading, Whitespace,
+                    Generic.Subheading, Whitespace)),
             # task list
             (r'^(\s*)([*-] )(\[[ xX]\])( .+\n)',
-            bygroups(Text, Keyword, Keyword, using(this, state='inline'))),
+            bygroups(Whitespace, Keyword, Keyword, using(this, state='inline'))),
             # bulleted list
             (r'^(\s*)([*-])(\s)(.+\n)',
-            bygroups(Text, Keyword, Text, using(this, state='inline'))),
+            bygroups(Whitespace, Keyword, Whitespace, using(this, state='inline'))),
             # numbered list
             (r'^(\s*)([0-9]+\.)( .+\n)',
-            bygroups(Text, Keyword, using(this, state='inline'))),
+            bygroups(Whitespace, Keyword, using(this, state='inline'))),
             # quote
-            (r'^(\s*>\s)(.+\n)', bygroups(Keyword, Generic.Emph)),
+            (r'^(\s*)(>)(\s+)(.+)(\n)', bygroups(Whitespace, Keyword,
+                    Whitespace, Generic.Emph, Whitespace)),
             # code block fenced by 3 backticks
-            (r'^(\s*```\n[\w\W]*?^\s*```$\n)', String.Backtick),
+            (r'^(\s*)(```\n[\w\W]*?^\s*```$)(\n)',
+                    bygroups(Whitespace, String.Backtick, Whitespace)),
             # code block with language
             (r'^(\s*```)(\w+)(\n)([\w\W]*?)(^\s*```$\n)', _handle_codeblock),
 
@@ -570,7 +574,7 @@ class MarkdownLexer(RegexLexer):
         ],
         'inline': [
             # escape
-            (r'\\.', Text),
+            (r'\\.', String.Escape),
             # inline code
             (r'([^`]?)(`[^`\n]+`)', bygroups(Text, String.Backtick)),
             # warning: the following rules eat outer tags.
@@ -595,8 +599,8 @@ class MarkdownLexer(RegexLexer):
             #   [id]: http://example.com/
             (r'(\[)([^]]+)(\])(\[)([^]]*)(\])',
              bygroups(Text, Name.Tag, Text, Text, Name.Label, Text)),
-            (r'^(\s*\[)([^]]*)(\]:\s*)(.+)',
-             bygroups(Text, Name.Label, Text, Name.Attribute)),
+            (r'^(\s*)(\[)([^]]*)(\]:)(\s*)(.+)',
+             bygroups(Whitespace, Text, Name.Label, Text, Whitespace, Name.Attribute)),
 
             # general text, must come last!
             (r'[^\\\s]+', Text),

@@ -10,6 +10,10 @@ code
 ```
 
 ---tokens---
-'```\ncode\n```\n' Literal.String.Backtick
+'```\ncode\n```' Literal.String.Backtick
+'\n'          Text.Whitespace
 
-'\n```\nmulti\n`line`\ncode\n```\n' Literal.String.Backtick
+'\n'          Text.Whitespace
+
+'```\nmulti\n`line`\ncode\n```' Literal.String.Backtick
+'\n'          Text.Whitespace

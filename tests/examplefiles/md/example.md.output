@@ -1,15 +1,15 @@
 '# this is a header' Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\n'          Text
 
 '## this is a 2nd level header' Generic.Subheading
-'\n'          Text
+'\n'          Text.Whitespace
 
-'\n'          Text
+'\n'          Text.Whitespace
 
 '*'           Keyword
-' '           Text
+' '           Text.Whitespace
 'list'        Text
 ' '           Text
 'item'        Text
@@ -17,9 +17,9 @@
 '1'           Text
 '\n'          Text
 
-'  '          Text
+'  '          Text.Whitespace
 '*'           Keyword
-' '           Text
+' '           Text.Whitespace
 'list'        Text
 ' '           Text
 'item'        Text
@@ -28,7 +28,7 @@
 '\n'          Text
 
 '*'           Keyword
-' '           Text
+' '           Text.Whitespace
 'list'        Text
 ' '           Text
 'item'        Text
@@ -37,7 +37,7 @@
 '\n'          Text
 
 '-'           Keyword
-' '           Text
+' '           Text.Whitespace
 'list'        Text
 ' '           Text
 'item'        Text
@@ -45,7 +45,7 @@
 '3'           Text
 '\n'          Text
 
-'\n'          Text
+'\n'          Text.Whitespace
 
 '1.'          Keyword
 ' '           Text
@@ -69,7 +69,7 @@
 '2'           Text
 '\n'          Text
 
-'\n'          Text
+'\n'          Text.Whitespace
 
 '- '          Keyword
 '[ ]'         Keyword
@@ -125,9 +125,9 @@
 ' '           Text
 'italic:'     Text
 ' '           Text
-'\\*'         Text
+'\\*'         Literal.String.Escape
 'italic'      Text
-'\\*'         Text
+'\\*'         Literal.String.Escape
 '\n'          Text
 
 'The'         Text
@@ -140,9 +140,9 @@
 ' '           Text
 'italic:'     Text
 ' '           Text
-'\\_'         Text
+'\\_'         Literal.String.Escape
 'italic'      Text
-'\\_'         Text
+'\\_'         Literal.String.Escape
 '\n'          Text
 
 '\n'          Text
@@ -274,14 +274,24 @@
 '**the next _word_ should have been italics**' Generic.Strong
 '\n'          Text
 
-'\n> '        Keyword
-'this is a quote\n' Generic.Emph
+'\n'          Text.Whitespace
 
-'\n> '        Keyword
-'this is a multiline\n' Generic.Emph
+'>'           Keyword
+' '           Text.Whitespace
+'this is a quote' Generic.Emph
+'\n'          Text.Whitespace
 
-'> '          Keyword
-'quote string thing\n' Generic.Emph
+'\n'          Text.Whitespace
+
+'>'           Keyword
+' '           Text.Whitespace
+'this is a multiline' Generic.Emph
+'\n'          Text.Whitespace
+
+'>'           Keyword
+' '           Text.Whitespace
+'quote string thing' Generic.Emph
+'\n'          Text.Whitespace
 
 '\n'          Text
 
@@ -346,11 +356,15 @@
 
 '['           Text
 'id'          Name.Label
-']: '         Text
+']:'          Text
+' '           Text.Whitespace
 'http://example.com/' Name.Attribute
 '\n'          Text
 
-'\n```\n  * this is just unformated\n      __text__\n```\n' Literal.String.Backtick
+'\n'          Text.Whitespace
+
+'```\n  * this is just unformated\n      __text__\n```' Literal.String.Backtick
+'\n'          Text.Whitespace
 
 '\n'          Text
 

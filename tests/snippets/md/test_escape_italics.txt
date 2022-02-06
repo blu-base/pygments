@@ -4,20 +4,20 @@
 \_ no italics \_
 
 ---tokens---
-'\\*'         Text
+'\\*'         Literal.String.Escape
 'no'          Text
 ' '           Text
 'italics'     Text
-'\\*'         Text
+'\\*'         Literal.String.Escape
 '\n'          Text
 
 '\n'          Text
 
-'\\_'         Text
+'\\_'         Literal.String.Escape
 ' '           Text
 'no'          Text
 ' '           Text
 'italics'     Text
 ' '           Text
-'\\_'         Text
+'\\_'         Literal.String.Escape
 '\n'          Text

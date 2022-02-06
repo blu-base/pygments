@@ -6,14 +6,15 @@ code
 * bar
 
 ---tokens---
-'```\ncode\n```\n' Literal.String.Backtick
+'```\ncode\n```' Literal.String.Backtick
+'\n'          Text.Whitespace
 
 '*'           Keyword
-' '           Text
+' '           Text.Whitespace
 '*foo*'       Generic.Emph
 '\n'          Text
 
 '*'           Keyword
-' '           Text
+' '           Text.Whitespace
 'bar'         Text
 '\n'          Text
