@@ -83,18 +83,18 @@ class BaseMakefileLexer(RegexLexer):
             # special variables
             (r'\$[<@$+%?|*]', Keyword),
             (r'\s+', Whitespace),
-            (r'#.*?\n', Comment),
+            (r'(#.*?)(\n)', bygroups(Comment, Whitespace)),
             (r'((?:un)?export)(\s+)(?=[\w${}\t -]+\n)',
-             bygroups(Keyword, Text), 'export'),
-            (r'(?:un)?export\s+', Keyword),
+             bygroups(Keyword, Whitespace), 'export'),
+            (r'((?:un)?export)(\s+)', bygroups(Keyword, Whitespace)),
             # assignment
             (r'([\w${}().-]+)(\s*)([!?:+]?=)([ \t]*)((?:.*\\\n)+|.*\n)',
-             bygroups(Name.Variable, Text, Operator, Text, using(BashLexer))),
+             bygroups(Name.Variable, Whitespace, Operator, Whitespace, using(BashLexer))),
             # strings
             (r'"(\\\\|\\[^\\]|[^"\\])*"', String.Double),
             (r"'(\\\\|\\[^\\]|[^'\\])*'", String.Single),
             # targets
-            (r'([^\n:]+)(:+)([ \t]*)', bygroups(Name.Function, Operator, Text),
+            (r'([^\n:]+)(:+)([ \t]*)', bygroups(Name.Function, Operator, Whitespace),
              'block-header'),
             # expansions
             (r'\$\(', Keyword, 'expansion'),
@@ -108,16 +108,16 @@ class BaseMakefileLexer(RegexLexer):
         ],
         'export': [
             (r'[\w${}-]+', Name.Variable),
-            (r'\n', Text, '#pop'),
+            (r'\n', Whitespace, '#pop'),
             (r'\s+', Whitespace),
         ],
         'block-header': [
             (r'[,|]', Punctuation),
-            (r'#.*?\n', Comment, '#pop'),
-            (r'\\\n', Text),  # line continuation
+            (r'(#.*?)(\n)', bygroups(Comment, Whitespace), '#pop'),
+            (r'(\\)(\n)', bygroups(String.Escape, Whitespace)),  # line continuation
             (r'\$\(', Keyword, 'expansion'),
             (r'[a-zA-Z_]+', Name),
-            (r'\n', Text, '#pop'),
+            (r'\n', Whitespace, '#pop'),
             (r'.', Text),
         ],
     }
@@ -176,7 +176,7 @@ class CMakeLexer(RegexLexer):
             (r'(?s)".*?"', String.Double),
             (r'\\\S+', String),
             (r'[^)$"# \t\n]+', String),
-            (r'\n', Text),  # explicitly legal
+            (r'\n', Whitespace),  # explicitly legal
             include('keywords'),
             include('ws')
         ],
@@ -189,7 +189,7 @@ class CMakeLexer(RegexLexer):
         ],
         'ws': [
             (r'[ \t]+', Whitespace),
-            (r'#.*\n', Comment),
+            (r'(#.*)(\n)', bygroups(Comment, Whitespace)),
         ]
     }
 
