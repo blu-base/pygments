@@ -358,7 +358,7 @@ class GroffLexer(RegexLexer):
         'textline': [
             include('escapes'),
             (r'[^\\\n]+', Text),
-            (r'\n', Text, '#pop'),
+            (r'\n', Whitespace, '#pop'),
         ],
         'escapes': [
             # groff has many ways to write escapes.
@@ -367,15 +367,15 @@ class GroffLexer(RegexLexer):
             (r'\\\(.{2}', String.Escape),
             (r'\\.\[.*\]', String.Escape),
             (r'\\.', String.Escape),
-            (r'\\\n', Text, 'request'),
+            (r'(\\)(\n)', bygroups(Text, Whitespace), 'request'),
         ],
         'request': [
-            (r'\n', Text, '#pop'),
+            (r'\n', Whitespace, '#pop'),
             include('escapes'),
             (r'"[^\n"]+"', String.Double),
             (r'\d+', Number),
             (r'\S+', String),
-            (r'\s+', Text),
+            (r'\s+', Whitespace),
         ],
     }
 
