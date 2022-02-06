@@ -1,11 +1,11 @@
 '%'           Comment.Preproc
 'if'          Comment.Preproc
-' '           Text
+' '           Text.Whitespace
 'defined'     Keyword
 '('           Punctuation
 '__foo__'     Name.Variable
 ')'           Punctuation
-'\n'          Text
+'\n'          Text.Whitespace
 
 '.'           Punctuation
 'cls'         Name.Class
@@ -26,7 +26,7 @@
 
 '%'           Comment.Preproc
 'endif'       Comment.Preproc
-'\n'          Text
+'\n'          Text.Whitespace
 
 '%'           Comment.Preproc
 'literal'     Comment.Preproc

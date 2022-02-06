@@ -424,8 +424,8 @@ class MozPreprocHashLexer(RegexLexer):
             (r'__\w+?__', Name.Variable),
             (r'@\w+?@', Name.Class),
             (r'\w+', Name),
-            (r'\n', Text, '#pop'),
-            (r'\s+', Text),
+            (r'\n', Whitespace, '#pop'),
+            (r'\s+', Whitespace),
             (r'\S', Punctuation),
         ],
     }
