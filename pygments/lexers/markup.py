@@ -634,7 +634,7 @@ class TiddlyWiki5Lexer(RegexLexer):
         # section header
         yield match.start(1), String, match.group(1)
         yield match.start(2), String, match.group(2)
-        yield match.start(3), Text,   match.group(3)
+        yield match.start(3), Whitespace,   match.group(3)
 
         # lookup lexer if wanted and existing
         lexer = None
@@ -662,7 +662,7 @@ class TiddlyWiki5Lexer(RegexLexer):
 
         # section header
         yield match.start(1), String, match.group(1)
-        yield match.start(2), String, match.group(2)
+        yield match.start(2), Whitespace, match.group(2)
 
         lexer = None
         if self.handlecodeblocks:
@@ -684,16 +684,17 @@ class TiddlyWiki5Lexer(RegexLexer):
     tokens = {
         'root': [
             # title in metadata section
-            (r'^(title)(:\s)(.+\n)', bygroups(Keyword, Text, Generic.Heading)),
+            (r'^(title)(:)(\s+)(.+)(\n)', bygroups(Keyword, Text, Whitespace,
+                    Generic.Heading, Whitespace)),
             # headings
-            (r'^(!)([^!].+\n)', bygroups(Generic.Heading, Text)),
-            (r'^(!{2,6})(.+\n)', bygroups(Generic.Subheading, Text)),
+            (r'^(!)([^!].+)(\n)', bygroups(Generic.Heading, Text, Whitespace)),
+            (r'^(!{2,6})(.+)(\n)', bygroups(Generic.Subheading, Text, Whitespace)),
             # bulleted or numbered lists or single-line block quotes
             # (can be mixed)
             (r'^(\s*)([*#>]+)(\s*)(.+\n)',
-             bygroups(Text, Keyword, Text, using(this, state='inline'))),
+             bygroups(Whitespace, Keyword, Whitespace, using(this, state='inline'))),
             # multi-line block quotes
-            (r'^(<<<.*\n)([\w\W]*?)(^<<<.*$)', bygroups(String, Text, String)),
+            (r'^(<<<.*)(\n)([\w\W]*?)(^<<<.*$)', bygroups(String, Whitespace, Text, String)),
             # table header
             (r'^(\|.*?\|h)$', bygroups(Generic.Strong)),
             # table footer or caption
@@ -703,7 +704,7 @@ class TiddlyWiki5Lexer(RegexLexer):
             # definitions
             (r'^(;.*)$', bygroups(Generic.Strong)),
             # text block
-            (r'^(```\n)([\w\W]*?)(^```$)', bygroups(String, Text, String)),
+            (r'^(```)(\n)([\w\W]*?)(^```$)', bygroups(String, Whitespace, Text, String)),
             # code block with language
             (r'^(```)(\w+)(\n)([\w\W]*?)(^```$)', _handle_codeblock),
             # CSS style block
@@ -724,20 +725,20 @@ class TiddlyWiki5Lexer(RegexLexer):
             # created or modified date
             (r'\d{17}', Number.Integer),
             # italics
-            (r'(\s)(//[^/]+//)((?=\W|\n))',
-             bygroups(Text, Generic.Emph, Text)),
+            (r'(\s+)(//[^/]+//)((?=\W|\n))',
+             bygroups(Whitespace, Generic.Emph, Text)),
             # superscript
-            (r'(\s)(\^\^[^\^]+\^\^)', bygroups(Text, Generic.Emph)),
+            (r'(\s+)(\^\^[^\^]+\^\^)', bygroups(Whitespace, Generic.Emph)),
             # subscript
-            (r'(\s)(,,[^,]+,,)', bygroups(Text, Generic.Emph)),
+            (r'(\s+)(,,[^,]+,,)', bygroups(Whitespace, Generic.Emph)),
             # underscore
-            (r'(\s)(__[^_]+__)', bygroups(Text, Generic.Strong)),
+            (r'(\s+)(__[^_]+__)', bygroups(Whitespace, Generic.Strong)),
             # bold
-            (r"(\s)(''[^']+'')((?=\W|\n))",
-             bygroups(Text, Generic.Strong, Text)),
+            (r"(\s+)(''[^']+'')((?=\W|\n))",
+             bygroups(Whitespace, Generic.Strong, Text)),
             # strikethrough
-            (r'(\s)(~~[^~]+~~)((?=\W|\n))',
-             bygroups(Text, Generic.Deleted, Text)),
+            (r'(\s+)(~~[^~]+~~)((?=\W|\n))',
+             bygroups(Whitespace, Generic.Deleted, Text)),
             # TiddlyWiki variables
             (r'<<[^>]+>>', Name.Tag),
             (r'\$\$[^$]+\$\$', Name.Tag),
@@ -761,7 +762,7 @@ class TiddlyWiki5Lexer(RegexLexer):
             (r'(\b.?.?tps?://[^\s"]+)', bygroups(Name.Attribute)),
 
             # general text, must come last!
-            (r'[\w]+', Text),
+            (r'\w+', Text),
             (r'.', Text)
         ],
     }

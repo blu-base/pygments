@@ -25,8 +25,10 @@
 '\n'          Text
 
 'title'       Keyword
-': '          Text
-'TiddlyWiki5\n' Generic.Heading
+':'           Text
+' '           Text.Whitespace
+'TiddlyWiki5' Generic.Heading
+'\n'          Text.Whitespace
 
 'type'        Keyword
 ':'           Text
@@ -104,7 +106,7 @@
 '\n'          Text
 
 '<style>'     Literal.String
-'\n'          Literal.String
+'\n'          Text.Whitespace
 
 '/* compensating the cell padding */' Comment
 '\n'          Text.Whitespace
@@ -167,7 +169,8 @@
 '\n'          Text
 
 '!'           Generic.Heading
-'Main Header\n' Text
+'Main Header' Text
+'\n'          Text.Whitespace
 
 '\n'          Text
 
@@ -181,10 +184,10 @@
 ':'           Text
 '\n'          Text
 
-'\n'          Text
+'\n'          Text.Whitespace
 
 '*'           Keyword
-' '           Text
+' '           Text.Whitespace
 '<code>'      Name.Tag
 '&#96;'       Literal.String.Regex
 'backticks'   Text
@@ -197,7 +200,7 @@
 '\n'          Text
 
 '**'          Keyword
-' '           Text
+' '           Text.Whitespace
 'Alternatively' Text
 ','           Text
 ' '           Text
@@ -220,13 +223,13 @@
 '</code>'     Name.Tag
 '\n'          Text
 
-' '           Text
+' '           Text.Whitespace
 '*'           Keyword
-' '           Text
+' '           Text.Whitespace
 "`''bold''`"  Literal.String.Backtick
 ' '           Text
 'for'         Text
-' '           Text
+' '           Text.Whitespace
 "''bold text''" Generic.Strong
 '\n'          Text
 
@@ -234,7 +237,7 @@
 '`//italic//`' Literal.String.Backtick
 ' '           Text
 'for'         Text
-' '           Text
+' '           Text.Whitespace
 '//italic text//' Generic.Emph
 ' '           Text
 '('           Text
@@ -245,11 +248,11 @@
 '\n'          Text
 
 '*#'          Keyword
-' '           Text
+' '           Text.Whitespace
 '`__underscore__`' Literal.String.Backtick
 ' '           Text
 'for'         Text
-' '           Text
+' '           Text.Whitespace
 '__underscored text__' Generic.Strong
 '\n'          Text
 
@@ -261,14 +264,14 @@
 ':'           Text
 '\n'          Text
 
-'\n'          Text
+'\n'          Text.Whitespace
 
 '#'           Keyword
-' '           Text
+' '           Text.Whitespace
 '`^^superscript^^`' Literal.String.Backtick
 ' '           Text
 'for'         Text
-' '           Text
+' '           Text.Whitespace
 '^^superscripted^^' Generic.Emph
 ' '           Text
 'text'        Text
@@ -281,11 +284,11 @@
 '\n'          Text
 
 '#'           Keyword
-' '           Text
+' '           Text.Whitespace
 '`,,subscript,,`' Literal.String.Backtick
 ' '           Text
 'for'         Text
-' '           Text
+' '           Text.Whitespace
 ',,subscripted,,' Generic.Emph
 ' '           Text
 'text'        Text
@@ -298,11 +301,11 @@
 '\n'          Text
 
 '#*'          Keyword
-' '           Text
+' '           Text.Whitespace
 '`~~strikethrough~~`' Literal.String.Backtick
 ' '           Text
 'for'         Text
-' '           Text
+' '           Text.Whitespace
 '~~strikethrough~~' Generic.Deleted
 ' '           Text
 'text'        Text
@@ -331,7 +334,8 @@
 '\n'          Text
 
 '!!'          Generic.Subheading
-'Links\n'     Text
+'Links'       Text
+'\n'          Text.Whitespace
 
 '\n'          Text
 
@@ -388,13 +392,14 @@
 '\n'          Text
 
 '!!!'         Generic.Subheading
-'Code\n'      Text
+'Code'        Text
+'\n'          Text.Whitespace
 
 '\n'          Text
 
 '```'         Literal.String
 'bash'        Literal.String
-'\n'          Text
+'\n'          Text.Whitespace
 
 'cd'          Name.Builtin
 ' '           Text
@@ -410,7 +415,8 @@
 '\n'          Text
 
 '!!!'         Generic.Subheading
-'Table\n'     Text
+'Table'       Text
+'\n'          Text.Whitespace
 
 '\n'          Text
 
@@ -455,11 +461,13 @@
 '\n'          Text
 
 '!'           Generic.Heading
-'Block quote\n' Text
+'Block quote' Text
+'\n'          Text.Whitespace
 
 '\n'          Text
 
-'<<<\n'       Literal.String
+'<<<'         Literal.String
+'\n'          Text.Whitespace
 
 'Computers are like a bicycle for our minds\n' Text
 
