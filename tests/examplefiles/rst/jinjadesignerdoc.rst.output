@@ -1,11 +1,11 @@
 '======================' Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 'Designer Documentation' Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '======================' Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\n'          Text
 
@@ -15,10 +15,10 @@
 '\n'          Text
 
 'Basics'      Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '======'      Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\n'          Text
 
@@ -46,12 +46,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'html+jinja'  Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"\n' Comment.Preproc
@@ -288,12 +288,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'html+jinja'  Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '<'           Punctuation
@@ -330,12 +330,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'jinja'       Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '{{'          Comment.Preproc
@@ -391,10 +391,10 @@
 '\n\n'        Other
 
 'Filters'     Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '======='     Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\n'          Text
 
@@ -408,12 +408,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'jinja'       Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '{{'          Comment.Preproc
@@ -476,10 +476,10 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'admonition'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'note'        Text
 '\n'          Text
 
@@ -498,12 +498,12 @@
 '\n'          Text
 
 '    ..'      Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'jinja'       Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '        '    Text
 'correct:\n'  Other
@@ -582,10 +582,10 @@
 '\n\n'        Other
 
 'Tests'       Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '====='       Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\n'          Text
 
@@ -598,12 +598,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'jinja'       Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '{{'          Comment.Preproc
@@ -657,10 +657,10 @@
 '\n'          Text
 
 'Global Functions' Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '================' Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\n'          Text
 
@@ -710,10 +710,10 @@
 '\n'          Text
 
 'Loops'       Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '====='       Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\n'          Text
 
@@ -731,12 +731,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'html+jinja'  Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '<'           Punctuation
@@ -989,12 +989,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'html+jinja'  Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '<'           Punctuation
@@ -1141,10 +1141,10 @@
 '\n'          Text
 
 'Cycling'     Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '======='     Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\n'          Text
 
@@ -1164,12 +1164,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'html+jinja'  Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '<'           Punctuation
@@ -1258,12 +1258,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'html+jinja'  Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '<'           Punctuation
@@ -1289,10 +1289,10 @@
 '\n\n'        Text
 
 'Conditions'  Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '=========='  Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\n'          Text
 
@@ -1309,12 +1309,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'jinja'       Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '{%'          Comment.Preproc
@@ -1405,12 +1405,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'html+jinja'  Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '{%'          Comment.Preproc
@@ -1483,10 +1483,10 @@
 '\n\n'        Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'admonition'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'Note'        Text
 '\n'          Text
 
@@ -1514,10 +1514,10 @@
 '\n'          Text
 
 'Operators'   Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '========='   Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\n'          Text
 
@@ -1714,7 +1714,7 @@
 'Note that there is no support for any bit operations or something similar.' Text
 '\n'          Text
 
-'\n'          Text
+'\n'          Text.Whitespace
 
 '*'           Literal.Number
 ' special note regarding ' Text
@@ -1762,10 +1762,10 @@
 '\n'          Text
 
 'Boolean Values' Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '==============' Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\n'          Text
 
@@ -1813,12 +1813,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'jinja'       Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '{%'          Comment.Preproc
@@ -1877,10 +1877,10 @@
 '    this is also true because the string is not empty.\n\n' Other
 
 'Slicing'     Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '======='     Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\n'          Text
 
@@ -1891,12 +1891,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'jinja'       Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '{%'          Comment.Preproc
@@ -1979,10 +1979,10 @@
 '\n'          Text
 
 'Macros'      Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '======'      Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\n'          Text
 
@@ -1996,12 +1996,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'html+jinja'  Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '{%'          Comment.Preproc
@@ -2078,12 +2078,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'jinja'       Keyword
-'\n    \n'    Text
+'\n    \n'    Text.Whitespace
 
 '    '        Text
 '{%'          Comment.Preproc
@@ -2126,12 +2126,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'html+jinja'  Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '{%'          Comment.Preproc
@@ -2230,10 +2230,10 @@
 '\n\n'        Text
 
 'Inheritance' Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '===========' Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\n'          Text
 
@@ -2259,10 +2259,10 @@
 '\n'          Text
 
 'Base Template' Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '-------------' Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\n'          Text
 
@@ -2283,12 +2283,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'html+jinja'  Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"\n' Comment.Preproc
@@ -2500,10 +2500,10 @@
 '\n'          Text
 
 'Child Template' Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '--------------' Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\n'          Text
 
@@ -2514,12 +2514,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'html+jinja'  Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '{%'          Comment.Preproc
@@ -2692,12 +2692,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'jinja'       Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '{%'          Comment.Preproc
@@ -2727,10 +2727,10 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'admonition'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'Note'        Text
 '\n'          Text
 
@@ -2767,10 +2767,10 @@
 '\n'          Text
 
 'Template Inclusion' Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '==================' Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\n'          Text
 
@@ -2794,12 +2794,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'jinja'       Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '{%'          Comment.Preproc
@@ -2839,10 +2839,10 @@
 '\n'          Text
 
 'Filtering Blocks' Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '================' Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\n'          Text
 
@@ -2856,12 +2856,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'jinja'       Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '{%'          Comment.Preproc
@@ -2897,12 +2897,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'jinja'       Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '{%'          Comment.Preproc
@@ -2937,10 +2937,10 @@
 '\n'          Text
 
 'Defining Variables' Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '==================' Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\n'          Text
 
@@ -2955,12 +2955,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'jinja'       Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '{%'          Comment.Preproc
@@ -2994,10 +2994,10 @@
 '\n'          Text
 
 'Scopes'      Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '======'      Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\n'          Text
 
@@ -3034,12 +3034,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'jinja'       Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '{%'          Comment.Preproc
@@ -3142,10 +3142,10 @@
 '\n'          Text
 
 'Undefined Variables' Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '===================' Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\n'          Text
 
@@ -3187,12 +3187,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'jinja'       Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '{{'          Comment.Preproc
@@ -3258,12 +3258,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'jinja'       Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '{{'          Comment.Preproc
@@ -3310,12 +3310,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'jinja'       Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '{{'          Comment.Preproc
@@ -3337,10 +3337,10 @@
 '    still returns `undefined`.\n\n' Other
 
 'Escaping'    Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '========'    Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\n'          Text
 
@@ -3359,12 +3359,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'jinja'       Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '{{'          Comment.Preproc
@@ -3385,12 +3385,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'jinja'       Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '{%'          Comment.Preproc
@@ -3427,10 +3427,10 @@
 '\n\n'        Other
 
 'Reserved Keywords' Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '=================' Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\n'          Text
 
@@ -3528,12 +3528,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'jinja'       Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '{%'          Comment.Preproc
@@ -3584,10 +3584,10 @@
 '\n'          Text
 
 'Internationalization' Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '====================' Generic.Heading
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\n'          Text
 
@@ -3603,12 +3603,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'jinja'       Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '{%'          Comment.Preproc
@@ -3664,12 +3664,12 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'jinja'       Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '    '        Text
 '{%'          Comment.Preproc
@@ -3821,10 +3821,10 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'admonition'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'note'        Text
 '\n'          Text
 
@@ -3846,12 +3846,12 @@
 '\n'          Text
 
 '    ..'      Punctuation
-' '           Text
+' '           Text.Whitespace
 'sourcecode'  Operator.Word
 '::'          Punctuation
-' '           Text
+' '           Text.Whitespace
 'jinja'       Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '        '    Text
 '{%'          Comment.Preproc
@@ -3896,7 +3896,7 @@
 '\n\n'        Other
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 '_slicing chapter:' Name.Tag
 ' http'       Text
 ':'           Text
@@ -3904,7 +3904,7 @@
 '\n'          Text
 
 '..'          Punctuation
-' '           Text
+' '           Text.Whitespace
 '_range function:' Name.Tag
 ' http'       Text
 ':'           Text

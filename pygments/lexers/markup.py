@@ -17,7 +17,7 @@ from pygments.lexers.css import CssLexer
 from pygments.lexer import RegexLexer, DelegatingLexer, include, bygroups, \
     using, this, do_insertions, default, words
 from pygments.token import Text, Comment, Operator, Keyword, Name, String, \
-    Number, Punctuation, Generic, Other
+    Number, Punctuation, Generic, Other, Whitespace
 from pygments.util import get_bool_opt, ClassNotFound
 
 __all__ = ['BBCodeLexer', 'MoinWikiLexer', 'RstLexer', 'TexLexer', 'GroffLexer',
@@ -46,7 +46,7 @@ class BBCodeLexer(RegexLexer):
             (r'\[', Text),
         ],
         'tag': [
-            (r'\s+', Text),
+            (r'\s+', Whitespace),
             # attribute with value
             (r'(\w+)(=)("?[^\s"\]]+"?)',
              bygroups(Name.Attribute, Operator, String)),
@@ -77,21 +77,21 @@ class MoinWikiLexer(RegexLexer):
             (r'^#.*$', Comment),
             (r'(!)(\S+)', bygroups(Keyword, Text)),  # Ignore-next
             # Titles
-            (r'^(=+)([^=]+)(=+)(\s*#.+)?$',
-             bygroups(Generic.Heading, using(this), Generic.Heading, String)),
+            (r'^(=+)([^=]+)(=+)(\s*)(#.+)?$',
+             bygroups(Generic.Heading, using(this), Generic.Heading, Whitespace, String)),
             # Literal code blocks, with optional shebang
             (r'(\{\{\{)(\n#!.+)?', bygroups(Name.Builtin, Name.Namespace), 'codeblock'),
             (r'(\'\'\'?|\|\||`|__|~~|\^|,,|::)', Comment),  # Formatting
             # Lists
-            (r'^( +)([.*-])( )', bygroups(Text, Name.Builtin, Text)),
-            (r'^( +)([a-z]{1,5}\.)( )', bygroups(Text, Name.Builtin, Text)),
+            (r'^( +)([.*-])( )', bygroups(Whitespace, Name.Builtin, Whitespace)),
+            (r'^( +)([a-z]{1,5}\.)( )', bygroups(Whitespace, Name.Builtin, Whitespace)),
             # Other Formatting
             (r'\[\[\w+.*?\]\]', Keyword),  # Macro
             (r'(\[[^\s\]]+)(\s+[^\]]+?)?(\])',
              bygroups(Keyword, String, Keyword)),  # Link
             (r'^----+$', Keyword),  # Horizontal rules
             (r'[^\n\'\[{!_~^,|]+', Text),
-            (r'\n', Text),
+            (r'\n', Whitespace),
             (r'.', Text),
         ],
         'codeblock': [
@@ -131,12 +131,12 @@ class RstLexer(RegexLexer):
 
         # section header
         yield match.start(1), Punctuation, match.group(1)
-        yield match.start(2), Text, match.group(2)
+        yield match.start(2), Whitespace, match.group(2)
         yield match.start(3), Operator.Word, match.group(3)
         yield match.start(4), Punctuation, match.group(4)
-        yield match.start(5), Text, match.group(5)
+        yield match.start(5), Whitespace, match.group(5)
         yield match.start(6), Keyword, match.group(6)
-        yield match.start(7), Text, match.group(7)
+        yield match.start(7), Whitespace, match.group(7)
 
         # lookup lexer if wanted and existing
         lexer = None
@@ -178,61 +178,65 @@ class RstLexer(RegexLexer):
             # Heading with overline
             (r'^(=+|-+|`+|:+|\.+|\'+|"+|~+|\^+|_+|\*+|\++|#+)([ \t]*\n)'
              r'(.+)(\n)(\1)(\n)',
-             bygroups(Generic.Heading, Text, Generic.Heading,
-                      Text, Generic.Heading, Text)),
+             bygroups(Generic.Heading, Whitespace, Generic.Heading,
+                      Whitespace, Generic.Heading, Whitespace)),
             # Plain heading
             (r'^(\S.*)(\n)(={3,}|-{3,}|`{3,}|:{3,}|\.{3,}|\'{3,}|"{3,}|'
              r'~{3,}|\^{3,}|_{3,}|\*{3,}|\+{3,}|#{3,})(\n)',
-             bygroups(Generic.Heading, Text, Generic.Heading, Text)),
+             bygroups(Generic.Heading, Whitespace, Generic.Heading, Whitespace)),
             # Bulleted lists
             (r'^(\s*)([-*+])( .+\n(?:\1  .+\n)*)',
-             bygroups(Text, Number, using(this, state='inline'))),
+             bygroups(Whitespace, Number, using(this, state='inline'))),
             # Numbered lists
             (r'^(\s*)([0-9#ivxlcmIVXLCM]+\.)( .+\n(?:\1  .+\n)*)',
-             bygroups(Text, Number, using(this, state='inline'))),
+             bygroups(Whitespace, Number, using(this, state='inline'))),
             (r'^(\s*)(\(?[0-9#ivxlcmIVXLCM]+\))( .+\n(?:\1  .+\n)*)',
-             bygroups(Text, Number, using(this, state='inline'))),
+             bygroups(Whitespace, Number, using(this, state='inline'))),
             # Numbered, but keep words at BOL from becoming lists
             (r'^(\s*)([A-Z]+\.)( .+\n(?:\1  .+\n)+)',
-             bygroups(Text, Number, using(this, state='inline'))),
+             bygroups(Whitespace, Number, using(this, state='inline'))),
             (r'^(\s*)(\(?[A-Za-z]+\))( .+\n(?:\1  .+\n)+)',
-             bygroups(Text, Number, using(this, state='inline'))),
+             bygroups(Whitespace, Number, using(this, state='inline'))),
             # Line blocks
             (r'^(\s*)(\|)( .+\n(?:\|  .+\n)*)',
-             bygroups(Text, Operator, using(this, state='inline'))),
+             bygroups(Whitespace, Operator, using(this, state='inline'))),
             # Sourcecode directives
             (r'^( *\.\.)(\s*)((?:source)?code(?:-block)?)(::)([ \t]*)([^\n]+)'
              r'(\n[ \t]*\n)([ \t]+)(.*)(\n)((?:(?:\8.*)?\n)+)',
              _handle_sourcecode),
             # A directive
-            (r'^( *\.\.)(\s*)([\w:-]+?)(::)(?:([ \t]*)(.*))',
-             bygroups(Punctuation, Text, Operator.Word, Punctuation, Text,
-                      using(this, state='inline'))),
+            (r'^( *)(\.\.)(\s*)([\w:-]+?)(::)(?:([ \t]*)(.*))',
+             bygroups(Whitespace, Punctuation, Whitespace, Operator.Word,
+                    Punctuation, Whitespace, using(this, state='inline'))),
             # A reference target
-            (r'^( *\.\.)(\s*)(_(?:[^:\\]|\\.)+:)(.*?)$',
-             bygroups(Punctuation, Text, Name.Tag, using(this, state='inline'))),
+            (r'^( *)(\.\.)(\s*)(_(?:[^:\\]|\\.)+:)(.*?)$',
+             bygroups(Whitespace, Punctuation, Whitespace, Name.Tag,
+                    using(this, state='inline'))),
             # A footnote/citation target
-            (r'^( *\.\.)(\s*)(\[.+\])(.*?)$',
-             bygroups(Punctuation, Text, Name.Tag, using(this, state='inline'))),
+            (r'^( *)(\.\.)(\s*)(\[.+\])(.*?)$',
+             bygroups(Whitespace, Punctuation, Whitespace, Name.Tag,
+                    using(this, state='inline'))),
             # A substitution def
-            (r'^( *\.\.)(\s*)(\|.+\|)(\s*)([\w:-]+?)(::)(?:([ \t]*)(.*))',
-             bygroups(Punctuation, Text, Name.Tag, Text, Operator.Word,
-                      Punctuation, Text, using(this, state='inline'))),
+            (r'^( *)(\.\.)(\s*)(\|.+\|)(\s*)([\w:-]+?)(::)(?:([ \t]*)(.*))',
+             bygroups(Whitespace, Punctuation, Whitespace, Name.Tag,
+                    Whitespace, Operator.Word, Punctuation, Text,
+                    using(this, state='inline'))),
             # Comments
-            (r'^ *\.\..*(\n( +.*\n|\n)+)?', Comment.Preproc),
+            (r'^( *)(\.\.)(.*(\n( +.*\n|\n)+)?)',
+                    bygroups(Whitespace, Punctuation, Comment.Preproc)),
             # Field list marker
             (r'^( *)(:(?:\\\\|\\:|[^:\n])+:(?=\s))([ \t]*)',
-             bygroups(Text, Name.Class, Text)),
+             bygroups(Whitespace, Name.Class, Whitespace)),
             # Definition list
             (r'^(\S.*(?<!::)\n)((?:(?: +.*)\n)+)',
              bygroups(using(this, state='inline'), using(this, state='inline'))),
             # Code blocks
             (r'(::)(\n[ \t]*\n)([ \t]+)(.*)(\n)((?:(?:\3.*)?\n)+)',
-             bygroups(String.Escape, Text, String, String, Text, String)),
+             bygroups(String.Escape, Whitespace, Whitespace, String, Whitespace, String)),
             include('inline'),
         ],
         'inline': [
-            (r'\\.', Text),  # escape
+            (r'\\.', String.Escape),  # escape
             (r'``', String, 'literal'),  # code
             (r'(`.+?)(<.+?>)(`__?)',  # reference with inline target
              bygroups(String, String.Interpol, String)),
