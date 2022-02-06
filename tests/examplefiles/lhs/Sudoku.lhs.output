@@ -1,68 +1,69 @@
-'% Copyright 2005 Brian Alliet\n' Comment
+'% Copyright 2005 Brian Alliet' Comment
+'\n'          Text.Whitespace
 
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\\documentclass' Keyword
 '[11pt]'      Name.Attribute
 '{'           Name.Builtin
 'article'     Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\\usepackage' Keyword
 '{'           Name.Builtin
 'palatino'    Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\\usepackage' Keyword
 '{'           Name.Builtin
 'fullpage'    Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\\usepackage' Keyword
 '{'           Name.Builtin
 'parskip'     Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\\usepackage' Keyword
 '{'           Name.Builtin
 'lhs'         Text
 '}'           Name.Builtin
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '\\begin'     Keyword
 '{'           Name.Builtin
 'document'    Text
 '}'           Name.Builtin
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '\\title'     Keyword
 '{'           Name.Builtin
 'Sudoku Solver' Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\\author'    Keyword
 '{'           Name.Builtin
 'Brian Alliet' Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\\maketitle' Keyword
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '\\ignore'    Keyword
 '{'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\\begin'     Keyword
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 'module'      Keyword.Reserved
 ' '           Text.Whitespace
@@ -130,33 +131,39 @@
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 '}'           Name.Builtin
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '\\section'   Keyword
 '{'           Name.Builtin
 'Introduction' Text
 '}'           Name.Builtin
-'\n\nThis Haskell module implements a solver for Sudoku~' Text
+'\n\n'        Text.Whitespace
+
+'This Haskell module implements a solver for Sudoku~' Text
 '\\footnote'  Keyword
 '{'           Name.Builtin
 'http://en.wikipedia.org/wiki/Sudoku' Text
 '}'           Name.Builtin
-' puzzles. It can solve\nany Sudoku puzzle, even those that require backtracking.\n\n' Text
+' puzzles. It can solve' Text
+'\n'          Text.Whitespace
+
+'any Sudoku puzzle, even those that require backtracking.' Text
+'\n\n'        Text.Whitespace
 
 '\\section'   Keyword
 '{'           Name.Builtin
 'Data Types'  Text
 '}'           Name.Builtin
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '\\begin'     Keyword
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 'data'        Keyword.Reserved
 ' '           Text.Whitespace
@@ -191,23 +198,35 @@
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-"\n\nEach cell in a Sudoku grid can be in one of three states: ``Known'' if it has a known correct value~" Text
+'\n\n'        Text.Whitespace
+
+"Each cell in a Sudoku grid can be in one of three states: ``Known'' if it has a known correct value~" Text
 '\\footnote'  Keyword
 '{'           Name.Builtin
-"Actually\nthis doesn't always means it is correct. While we are in the backtracking stage we make our guesses ``Known''." Text
+'Actually'    Text
+'\n'          Text.Whitespace
+
+"this doesn't always means it is correct. While we are in the backtracking stage we make our guesses ``Known''." Text
 '}'           Name.Builtin
-",\n``Unknown'' if there is still more than one possible correct value, or ``Impossible'' if there is no value that can\npossibly fit the cell. Sudoku grids with ``Impossible'' cells are quickly discarded by the " Text
+','           Text
+'\n'          Text.Whitespace
+
+"``Unknown'' if there is still more than one possible correct value, or ``Impossible'' if there is no value that can" Text
+'\n'          Text.Whitespace
+
+"possibly fit the cell. Sudoku grids with ``Impossible'' cells are quickly discarded by the " Text
 '{'           Name.Builtin
 '\\tt'        Keyword
 ' solve'      Text
 '}'           Name.Builtin
-' function.\n\n' Text
+' function.'  Text
+'\n\n'        Text.Whitespace
 
 '\\begin'     Keyword
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 'type'        Keyword.Reserved
 ' '           Text.Whitespace
@@ -272,18 +291,27 @@
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n\nWe represent a Sudoku grid as an Array indexed by integer coordinates. We additionally define a newtype wrapper for the\ngrid. The smart constructor, ' Text
+'\n\n'        Text.Whitespace
+
+'We represent a Sudoku grid as an Array indexed by integer coordinates. We additionally define a newtype wrapper for the' Text
+'\n'          Text.Whitespace
+
+'grid. The smart constructor, ' Text
 '{'           Name.Builtin
 '\\tt'        Keyword
 ' makeSudoku' Text
 '}'           Name.Builtin
-' verifies some invariants before creating the Sudoku value. All the public\nAPI functions operate on the Sudoku type.\n\n' Text
+' verifies some invariants before creating the Sudoku value. All the public' Text
+'\n'          Text.Whitespace
+
+'API functions operate on the Sudoku type.' Text
+'\n\n'        Text.Whitespace
 
 '\\begin'     Keyword
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 'instance'    Keyword.Reserved
 ' '           Text.Whitespace
@@ -357,24 +385,27 @@
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n\nWe define ' Text
+'\n\n'        Text.Whitespace
+
+'We define '  Text
 '{'           Name.Builtin
 '\\tt'        Keyword
 ' Show'       Text
 '}'           Name.Builtin
-' instances for the above types.\n\n' Text
+' instances for the above types.' Text
+'\n\n'        Text.Whitespace
 
 '\\section'   Keyword
 '{'           Name.Builtin
 'Internal Functions' Text
 '}'           Name.Builtin
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '\\begin'     Keyword
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 'size'        Name.Function
 ' '           Text.Whitespace
@@ -409,13 +440,16 @@
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '{'           Name.Builtin
 '\\tt'        Keyword
 ' size'       Text
 '}'           Name.Builtin
-" returns the size (the width, height, and number of subboxes) for a Sudoku grid. We ensure Grid's are always\nsquare and indexed starting at " Text
+" returns the size (the width, height, and number of subboxes) for a Sudoku grid. We ensure Grid's are always" Text
+'\n'          Text.Whitespace
+
+'square and indexed starting at ' Text
 '$'           Literal.String
 '('           Operator
 '0'           Literal.Number
@@ -423,13 +457,14 @@
 '0'           Literal.Number
 ')'           Operator
 '$'           Literal.String
-" so simply incrementing either of the array's upper bounds is correct.\n\n" Text
+" so simply incrementing either of the array's upper bounds is correct." Text
+'\n\n'        Text.Whitespace
 
 '\\begin'     Keyword
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 'getRow'      Name.Function
 ','           Punctuation
@@ -757,7 +792,7 @@
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '{'           Name.Builtin
 '\\tt'        Keyword
@@ -773,7 +808,10 @@
 '\\tt'        Keyword
 ' getBox'     Text
 '}'           Name.Builtin
-' return the coordinates and values of the cell in row, column, or box\nnumber ' Text
+' return the coordinates and values of the cell in row, column, or box' Text
+'\n'          Text.Whitespace
+
+'number '     Text
 '{'           Name.Builtin
 '\\tt'        Keyword
 ' n'          Text
@@ -788,13 +826,14 @@
 '\\tt'        Keyword
 ' b'          Text
 '}'           Name.Builtin
-'.\n\n'       Text
+'.'           Text
+'\n\n'        Text.Whitespace
 
 '\\begin'     Keyword
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 'getNeighbors' Name.Function
 ' '           Text.Whitespace
@@ -895,19 +934,20 @@
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '{'           Name.Builtin
 '\\tt'        Keyword
 ' getNeighbors' Text
 '}'           Name.Builtin
-' returns the coordinates and values of all the neighbors of this cell.\n\n' Text
+' returns the coordinates and values of all the neighbors of this cell.' Text
+'\n\n'        Text.Whitespace
 
 '\\begin'     Keyword
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 'impossible'  Name.Function
 ' '           Text.Whitespace
@@ -965,19 +1005,23 @@
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '{'           Name.Builtin
 '\\tt'        Keyword
 ' impossible' Text
 '}'           Name.Builtin
-" returns a list of impossible values for a given cell. The impossible values consist of the values any\n``Known'' neighbors.\n\n" Text
+' returns a list of impossible values for a given cell. The impossible values consist of the values any' Text
+'\n'          Text.Whitespace
+
+"``Known'' neighbors." Text
+'\n\n'        Text.Whitespace
 
 '\\begin'     Keyword
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 'justUnknowns' Name.Function
 ' '           Text.Whitespace
@@ -1131,7 +1175,7 @@
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '{'           Name.Builtin
 '\\tt'        Keyword
@@ -1142,13 +1186,17 @@
 '\\tt'        Keyword
 ' justKnowns' Text
 '}'           Name.Builtin
-' return only the Known or Unknown values (with the constructor stripped off)\nfrom a list of cells.\n\n' Text
+' return only the Known or Unknown values (with the constructor stripped off)' Text
+'\n'          Text.Whitespace
+
+'from a list of cells.' Text
+'\n\n'        Text.Whitespace
 
 '\\begin'     Keyword
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 'updateGrid'  Name.Function
 ' '           Text.Whitespace
@@ -1238,25 +1286,26 @@
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '{'           Name.Builtin
 '\\tt'        Keyword
 ' updateGrid' Text
 '}'           Name.Builtin
-' applies a set of updates to a grid and returns the new grid only if it was updated.\n\n' Text
+' applies a set of updates to a grid and returns the new grid only if it was updated.' Text
+'\n\n'        Text.Whitespace
 
 '\\section'   Keyword
 '{'           Name.Builtin
 'Public API'  Text
 '}'           Name.Builtin
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '\\begin'     Keyword
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 'makeSudoku'  Name.Function
 ' '           Text.Whitespace
@@ -1478,7 +1527,7 @@
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '{'           Name.Builtin
 '\\tt'        Keyword
@@ -1489,18 +1538,30 @@
 '\\tt'        Keyword
 ' Sudoku'     Text
 '}'           Name.Builtin
-" value from a list of numbers. The given matrix must be square and have dimensions\nthat are a perfect square. The possible values for each cell range from 1 to the dimension of the square with ``0''\nrepresenting unknown values." Text
+' value from a list of numbers. The given matrix must be square and have dimensions' Text
+'\n'          Text.Whitespace
+
+"that are a perfect square. The possible values for each cell range from 1 to the dimension of the square with ``0''" Text
+'\n'          Text.Whitespace
+
+'representing unknown values.' Text
 '\\footnote'  Keyword
 '{'           Name.Builtin
-"The rest of the code doesn't depend on any of this weird ``0'' is unknown\nrepresentation. In fact, it doesn't depend on numeric values at all. ``0'' is just used here because it makes\nrepresenting grids in Haskell source code easier." Text
+"The rest of the code doesn't depend on any of this weird ``0'' is unknown" Text
+'\n'          Text.Whitespace
+
+"representation. In fact, it doesn't depend on numeric values at all. ``0'' is just used here because it makes" Text
+'\n'          Text.Whitespace
+
+'representing grids in Haskell source code easier.' Text
 '}'           Name.Builtin
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '\\begin'     Keyword
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 'eliminate'   Name.Function
 ' '           Text.Whitespace
@@ -1728,28 +1789,52 @@
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n\nThe '    Text
+'\n\n'        Text.Whitespace
+
+'The '        Text
 '{'           Name.Builtin
 '\\tt'        Keyword
 ' eliminate'  Text
 '}'           Name.Builtin
-" phase tries to remove possible choices for ``Unknowns'' based on ``Known'' values in the same row,\ncolumn, or box as the ``Unknown'' value. For each cell on the grid we find its ``neighbors'', that is, cells in the\nsame row, column, or box. Out of those neighbors we get a list of all the ``Known'' values. We can eliminate all of\nthese from our list of candidates for this cell. If we're lucky enough to eliminate all the candidates but one we have\na new ``Known'' value. If we're unlucky enough to have eliminates " Text
+" phase tries to remove possible choices for ``Unknowns'' based on ``Known'' values in the same row," Text
+'\n'          Text.Whitespace
+
+"column, or box as the ``Unknown'' value. For each cell on the grid we find its ``neighbors'', that is, cells in the" Text
+'\n'          Text.Whitespace
+
+"same row, column, or box. Out of those neighbors we get a list of all the ``Known'' values. We can eliminate all of" Text
+'\n'          Text.Whitespace
+
+"these from our list of candidates for this cell. If we're lucky enough to eliminate all the candidates but one we have" Text
+'\n'          Text.Whitespace
+
+"a new ``Known'' value. If we're unlucky enough to have eliminates " Text
 '{'           Name.Builtin
 '\\bf'        Keyword
 ' all'        Text
 '}'           Name.Builtin
-" the possible candidates we have a new\n``Impossible'' value.\n\nAfter iterating though every cell we make one more pass looking for conflicting changes. " Text
+' the possible candidates we have a new' Text
+'\n'          Text.Whitespace
+
+"``Impossible'' value." Text
+'\n\n'        Text.Whitespace
+
+'After iterating though every cell we make one more pass looking for conflicting changes. ' Text
 '{'           Name.Builtin
 '\\tt'        Keyword
 ' sanitize'   Text
 '}'           Name.Builtin
-" marks cells as\n``Impossible'' if we have conflicting ``Known'' values.\n\n" Text
+' marks cells as' Text
+'\n'          Text.Whitespace
+
+"``Impossible'' if we have conflicting ``Known'' values." Text
+'\n\n'        Text.Whitespace
 
 '\\begin'     Keyword
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 'analyze'     Name.Function
 ' '           Text.Whitespace
@@ -1962,12 +2047,17 @@
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n\nThe '    Text
+'\n\n'        Text.Whitespace
+
+'The '        Text
 '{'           Name.Builtin
 '\\tt'        Keyword
 ' analyze'    Text
 '}'           Name.Builtin
-" phase tries to turn ``Unknowns'' into ``Knowns'' when a certain ``Unknown'' is the only cell that\ncontains a value needed in a given row, column, or box. We apply each of the functions " Text
+" phase tries to turn ``Unknowns'' into ``Knowns'' when a certain ``Unknown'' is the only cell that" Text
+'\n'          Text.Whitespace
+
+'contains a value needed in a given row, column, or box. We apply each of the functions ' Text
 '{'           Name.Builtin
 '\\tt'        Keyword
 ' getRow'     Text
@@ -1977,7 +2067,8 @@
 '\\tt'        Keyword
 ' getCol'     Text
 '}'           Name.Builtin
-', and\n'     Text
+', and'       Text
+'\n'          Text.Whitespace
 
 '{'           Name.Builtin
 '\\tt'        Keyword
@@ -1988,18 +2079,28 @@
 '\\tt'        Keyword
 ' unique'     Text
 '}'           Name.Builtin
-' to each group, and update the array with the\nresults. ' Text
+' to each group, and update the array with the' Text
+'\n'          Text.Whitespace
+
+'results. '   Text
 '{'           Name.Builtin
 '\\tt'        Keyword
 ' unique'     Text
 '}'           Name.Builtin
-'  gets a list of all  the unknown cells in the group and finds all the unknown values in each of\nthose cells. Each of these values are iterated though looking for a value that is only contained in one cell. If such a\nvalue is found the cell containing it must be that value.\n\n' Text
+'  gets a list of all  the unknown cells in the group and finds all the unknown values in each of' Text
+'\n'          Text.Whitespace
+
+'those cells. Each of these values are iterated though looking for a value that is only contained in one cell. If such a' Text
+'\n'          Text.Whitespace
+
+'value is found the cell containing it must be that value.' Text
+'\n\n'        Text.Whitespace
 
 '\\begin'     Keyword
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 'backtrack'   Name.Function
 ' '           Text.Whitespace
@@ -2123,13 +2224,28 @@
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-"\n\nSometimes the above two phases still aren't enough to solve a puzzle. For these rare puzzles backtracking is required.\nWe attempt to solve the puzzle by replacing the first ``Unknown'' value with each of the candidate values and solving\nthe resulting puzzles. Hopefully at least one of our choices will result in a solvable puzzle.\n\nWe could actually solve any puzzle using backtracking alone, although this would be very inefficient. The above\nfunctions simplify most puzzles enough that the backtracking phase has to do hardly any work.\n\n" Text
+'\n\n'        Text.Whitespace
+
+"Sometimes the above two phases still aren't enough to solve a puzzle. For these rare puzzles backtracking is required." Text
+'\n'          Text.Whitespace
+
+"We attempt to solve the puzzle by replacing the first ``Unknown'' value with each of the candidate values and solving" Text
+'\n'          Text.Whitespace
+
+'the resulting puzzles. Hopefully at least one of our choices will result in a solvable puzzle.' Text
+'\n\n'        Text.Whitespace
+
+'We could actually solve any puzzle using backtracking alone, although this would be very inefficient. The above' Text
+'\n'          Text.Whitespace
+
+'functions simplify most puzzles enough that the backtracking phase has to do hardly any work.' Text
+'\n\n'        Text.Whitespace
 
 '\\begin'     Keyword
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 'solve'       Name.Function
 ' '           Text.Whitespace
@@ -2248,7 +2364,7 @@
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '{'           Name.Builtin
 '\\tt'        Keyword
@@ -2259,7 +2375,10 @@
 '\\tt'        Keyword
 ' eliminate'  Text
 '}'           Name.Builtin
-' phase. If that found the puzzle  to\nbe unsolvable we abort immediately. If ' Text
+' phase. If that found the puzzle  to' Text
+'\n'          Text.Whitespace
+
+'be unsolvable we abort immediately. If ' Text
 '{'           Name.Builtin
 '\\tt'        Keyword
 ' eliminate'  Text
@@ -2269,7 +2388,10 @@
 '\\tt'        Keyword
 ' eliminate'  Text
 '}'           Name.Builtin
-' phase again\nhoping to eliminate more. Once ' Text
+' phase again' Text
+'\n'          Text.Whitespace
+
+'hoping to eliminate more. Once ' Text
 '{'           Name.Builtin
 '\\tt'        Keyword
 ' eliminate'  Text
@@ -2279,7 +2401,10 @@
 '\\tt'        Keyword
 ' analyze'    Text
 '}'           Name.Builtin
-' phase. If this\nsucceeds in doing some work we start over again with the ' Text
+' phase. If this' Text
+'\n'          Text.Whitespace
+
+'succeeds in doing some work we start over again with the ' Text
 '{'           Name.Builtin
 '\\tt'        Keyword
 ' eliminate'  Text
@@ -2289,13 +2414,20 @@
 '\\tt'        Keyword
 ' analyze'    Text
 '}'           Name.Builtin
-" can do no more work\nwe have no choice but to resort to backtracking. (However in most cases backtracking won't actually do anything because\nthe puzzle is already solved.)\n\n" Text
+' can do no more work' Text
+'\n'          Text.Whitespace
+
+"we have no choice but to resort to backtracking. (However in most cases backtracking won't actually do anything because" Text
+'\n'          Text.Whitespace
+
+'the puzzle is already solved.)' Text
+'\n\n'        Text.Whitespace
 
 '\\begin'     Keyword
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 'showsCell'   Name.Function
 ' '           Text.Whitespace
@@ -2399,19 +2531,20 @@
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '{'           Name.Builtin
 '\\tt'        Keyword
 ' showCell'   Text
 '}'           Name.Builtin
-' shows a cell.\n\n' Text
+' shows a cell.' Text
+'\n\n'        Text.Whitespace
 
 '\\begin'     Keyword
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 'showsGrid'   Name.Function
 ' '           Text.Whitespace
@@ -2489,19 +2622,20 @@
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '{'           Name.Builtin
 '\\tt'        Keyword
 ' showGrid'   Text
 '}'           Name.Builtin
-' show a grid.\n\n' Text
+' show a grid.' Text
+'\n\n'        Text.Whitespace
 
 '\\begin'     Keyword
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 '-- FEATURE: This is pretty inefficient' Comment.Single
 '\n'          Text.Whitespace
@@ -2660,19 +2794,20 @@
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '{'           Name.Builtin
 '\\tt'        Keyword
 ' showsTable' Text
 '}'           Name.Builtin
-' shows a table (or matrix). Every column has the same width so things line up.\n\n' Text
+' shows a table (or matrix). Every column has the same width so things line up.' Text
+'\n\n'        Text.Whitespace
 
 '\\begin'     Keyword
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 'intSqrt'     Name.Function
 ' '           Text.Whitespace
@@ -2780,23 +2915,24 @@
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '{'           Name.Builtin
 '\\tt'        Keyword
 ' intSqrt'    Text
 '}'           Name.Builtin
-' is Newton`s Iteration for finding integral square roots.\n\n' Text
+' is Newton`s Iteration for finding integral square roots.' Text
+'\n\n'        Text.Whitespace
 
 '\\ignore'    Keyword
 '{'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 '\\begin'     Keyword
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 'test'        Name.Function
 ' '           Text.Whitespace
@@ -4339,13 +4475,13 @@
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 '}'           Name.Builtin
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '\\end'       Keyword
 '{'           Name.Builtin
 'document'    Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace

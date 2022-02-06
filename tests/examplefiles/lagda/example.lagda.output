@@ -2,32 +2,36 @@
 '{'           Name.Builtin
 'article'     Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
-'% this is a LaTeX comment\n' Comment
+'% this is a LaTeX comment' Comment
+'\n'          Text.Whitespace
 
 '\\usepackage' Keyword
 '{'           Name.Builtin
 'agda'        Text
 '}'           Name.Builtin
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '\\begin'     Keyword
 '{'           Name.Builtin
 'document'    Text
 '}'           Name.Builtin
-"\n\nHere's how you can define " Text
+'\n\n'        Text.Whitespace
+
+"Here's how you can define " Text
 '\\emph'      Keyword
 '{'           Name.Builtin
 'RGB'         Text
 '}'           Name.Builtin
-' colors in Agda:\n\n' Text
+' colors in Agda:' Text
+'\n\n'        Text.Whitespace
 
 '\\begin'     Keyword
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace
 
 'module'      Keyword.Reserved
 ' '           Text.Whitespace
@@ -95,10 +99,10 @@
 '{'           Name.Builtin
 'code'        Text
 '}'           Name.Builtin
-'\n\n'        Text
+'\n\n'        Text.Whitespace
 
 '\\end'       Keyword
 '{'           Name.Builtin
 'document'    Text
 '}'           Name.Builtin
-'\n'          Text
+'\n'          Text.Whitespace

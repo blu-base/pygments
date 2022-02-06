@@ -287,7 +287,7 @@ class TexLexer(RegexLexer):
 
     tokens = {
         'general': [
-            (r'%.*?\n', Comment),
+            (r'(%.*?)(\n)', bygroups(Comment, Whitespace)),
             (r'[{}]', Name.Builtin),
             (r'[&_^]', Name.Builtin),
         ],
@@ -299,7 +299,8 @@ class TexLexer(RegexLexer):
             (r'\\([a-zA-Z]+|.)', Keyword, 'command'),
             (r'\\$', Keyword),
             include('general'),
-            (r'[^\\$%&_^{}]+', Text),
+            (r'[^\n\\$%&_^{}]+', Text),
+            (r'\n+', Whitespace),
         ],
         'math': [
             (r'\\([a-zA-Z]+|.)', Name.Variable),
